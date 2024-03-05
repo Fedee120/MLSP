@@ -1,0 +1,49 @@
+/* styles/Home.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+  }
+  
+  .title {
+    margin: 2rem 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .button {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+  }
+  
+  .oracionContainer {
+    margin-top: 2rem;
+  }
+  
+  .oracion {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+  }
+  
+  .palabraCompleja {
+    font-size: 1.1rem;
+  }
+  
