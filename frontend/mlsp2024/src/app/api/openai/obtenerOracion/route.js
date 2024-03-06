@@ -6,17 +6,18 @@ export async function GET(request){
         model: "gpt-3.5-turbo-0125",
         response_format: { type: "json_object" },
         messages: [
-            { role: "user", content: `
-            Tu tarea es crear una oración interesante y desafiante. Dentro de esta oración, identifica una palabra, la oracion no debe ser trivial. Por favor, proporciona tu respuesta en el siguiente formato JSON, incluyendo tanto la oración completa como la palabra seleccionada:
+            { role: "user", content: 
+            `
+            Genera una oración creativa que incluya al menos una palabra que enriquezca significativamente su contenido. La oración debe ser no trivial. Proporciona tu respuesta en formato JSON, especificando la oración y destacando una palabra que consideres que añade profundidad a su significado. Aquí tienes un ejemplo de cómo debería ser la respuesta:
             {
-               "oracion": "Aqui va la oración generada",
-               "seleccionada": "seleccion"
+               'oracion': 'Ejemplo de oración generada aquí',
+               'seleccionada': 'palabraDestacada'
             }
-            Asegúrate de que la palabra seleccionada realmente agregue riqueza al significado de la oración.
+            Intenta que cada oración sea única y la palabra destacada varíe en cada generación.
              `
             }],
         max_tokens: 80,
-        temperature: 0.7,
+        temperature: 1.2,
     });
     // parsea la respuesta que obtenemos en formato json
     const respuesta = JSON.parse(completion.choices[0].message.content)

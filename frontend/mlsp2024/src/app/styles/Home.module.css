@@ -1,4 +1,5 @@
 /* styles/Home.module.css */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -6,34 +7,52 @@
     justify-content: center;
     min-height: 100vh;
     padding: 0 2rem;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
   }
   
   .title {
     margin: 2rem 0;
-    font-size: 2rem;
+    font-size: 2.5rem; /* Tamaño más grande para destacar */
     text-align: center;
+    color: black; /* Color para darle un toque más dinámico */
   }
   
-  .button {
-    padding: 0.5rem 2rem;
+  .description {
+    margin: 0 auto; /* Centrar la descripción */
+    padding: 0 25px; /* Padding a los costados */
+    padding-bottom: 25px;
+    max-width: 800px; /* Limitar el ancho máximo */
+    @media (max-width: 768px) {
+        font-size: 1.0rem;
+    }
+    line-height: 1.4;
+    color: #333;
+    text-align: justify; /* Justificar el texto puede mejorar la legibilidad para bloques largos */
+  }
+  
+.button {
+    padding: 0.5rem 5rem; /* Increased padding to make the button wider */
     font-size: 1rem;
     color: #fff;
-    background-color: #0070f3;
+    background-color: #4CAF50;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
+    transition: background-color 0.3s, transform 0.2s;
+}
   
   .button:hover {
-    background-color: #0056b3;
+    background-color: #388E3C;
+    transform: scale(1.05); /* Ligeramente más grande al hacer hover */
   }
   
   .button:disabled {
-    background-color: #888;
+    background-color: #C8E6C9;
     cursor: not-allowed;
   }
-  
+
   .oracionContainer {
     margin-top: 2rem;
   }
@@ -47,3 +66,97 @@
     font-size: 1.1rem;
   }
   
+  .descripcion {
+    background-color: #f0f0f0; /* Color de fondo suave para reducir el contraste */
+    padding: 20px; /* Espaciado interno para no tocar los bordes del contenedor */
+    border-radius: 8px; /* Bordes redondeados para una apariencia suave */
+    font-size: 16px; /* Tamaño de fuente accesible */
+    line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+    max-width: 800px; /* Ancho máximo para controlar la longitud de línea */
+    margin: 20px auto; /* Centrar el bloque de texto y añadir espacio alrededor */
+    color: #333; /* Color de texto oscuro para contraste con el fondo claro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para resaltar el bloque */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible */
+  }
+  
+.sliderContainer {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* Ajusta esto según el ancho deseado para tu deslizador */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5; /* Color de fondo suave para el contenedor del deslizador */
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil para darle profundidad */
+  }
+  
+  .oracionContainer {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+
+.container {
+    position: relative;
+    text-align: center;
+    overflow: hidden; /* Asegúrate de que el desbordamiento del contenedor no sea visible */
+    height: 100vh; /* O un valor que se ajuste a tu diseño */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .splashScreen {
+    width: 100%;
+    /* La altura no es estrictamente necesaria si el contenedor se ajusta a tu diseño */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px); /* Aplica el desenfoque */
+    position: fixed; /* Cambiado a fixed para sobreponerse sobre el contenido */
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10; /* Asegura que esté sobre el contenido principal */
+  }
+  
+  .ocultarSplash {
+    opacity: 0;
+    pointer-events: none; /* Esto asegura que el usuario pueda interactuar con elementos debajo */
+  }
+  
+ /* Nuevo estilo para aplicar desenfoque al contenido principal cuando se muestre la pantalla de bienvenida */
+.contenidoPrincipal.conDesenfoque::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(8px);
+    z-index: -1;
+  }
+  
+  /* Asegúrate de que el contenido principal se pueda desplazar sobre este pseudoelemento */
+  .contenidoPrincipal {
+    position: relative;
+  }
+  
+
+  .button_send {
+    padding: 0.5rem 5rem; /* Increased padding to make the button wider */
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
