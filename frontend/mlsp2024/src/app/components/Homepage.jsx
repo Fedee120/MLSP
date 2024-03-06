@@ -30,9 +30,14 @@ export default function Home() {
   const enviarEvaluacion = async () => {
     setCargando(true);
     try {
-      // Aquí llamarías a tu función externa para enviar la evaluación
-      // Por ejemplo: await enviarDatos({ oracion, palabraCompleja, evaluacion });
-      
+      const payload = {
+        oracion: oracion,
+        palabraCompleja: palabraCompleja,
+        evaluacion: evaluacion
+      };
+      // Replace '/api/guardarOracion' with your actual endpoint path
+      await axios.post('/api/guardarOracion', payload);
+
       // Obtener una nueva oración después de enviar la evaluación
       await obtenerOracion();
     } catch (error) {
