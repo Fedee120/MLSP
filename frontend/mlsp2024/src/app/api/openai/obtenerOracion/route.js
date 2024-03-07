@@ -56,7 +56,7 @@ function getRandomPrompt(encodedDate) {
             }
         ],
         max_tokens: 80,
-        temperature: 1.2,
+        temperature: 0.9,
     };
 
     const randomPrompt = Math.random() < 0.5 ? prompt1 : prompt2;
