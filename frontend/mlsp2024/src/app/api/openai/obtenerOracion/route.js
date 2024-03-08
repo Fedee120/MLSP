@@ -64,7 +64,7 @@ function getRandomPrompt(encodedDate) {
     return randomPrompt;
 }
 
-export async function GET(request){
+export async function POST(request){
     const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY})
     const date = Date.now().toString();
     const encodedDate = md5(date).toString();

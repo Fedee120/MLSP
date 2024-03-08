@@ -1,6 +1,5 @@
 import dbConnect from '../../db/mongoose';
 import Evaluation from '../../db/models/Evaluation'; // Adjust the path as necessary
-import { NextRequest } from 'next/server';
 
 export async function POST(req) {
     await dbConnect(); // Ensures that the database connection is established

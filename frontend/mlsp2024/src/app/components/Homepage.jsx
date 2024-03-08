@@ -15,7 +15,7 @@ export default function Home() {
   const obtenerOracion = async () => {
     setCargando(true);
     try {
-      const res = await axios.get('/api/openai/obtenerOracion');
+      const res = await axios.post('/api/openai/obtenerOracion');
       setOracion(res.data.oracion);
       setPalabraCompleja(res.data.seleccionada);
       setEvaluacion(50); // Restablecer la evaluación a 50 para la nueva oración
