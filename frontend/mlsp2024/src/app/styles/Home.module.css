@@ -13,8 +13,7 @@
   }
   
   .title {
-    margin: 2rem 0;
-    font-size: 2.5rem; /* Tamaño más grande para destacar */
+    font-size: 2rem; /* Tamaño más grande para destacar */
     text-align: center;
     color: black; /* Color para darle un toque más dinámico */
   }
@@ -22,7 +21,7 @@
   .description {
     margin: 0 auto; /* Centrar la descripción */
     padding: 0 25px; /* Padding a los costados */
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     max-width: 800px; /* Limitar el ancho máximo */
     @media (max-width: 768px) {
         font-size: 1.0rem;
