@@ -1,7 +1,7 @@
 /* styles/Home.module.css */
 
   .title {
-    font-size: 2rem; /* Tamaño más grande para destacar */
+    font-size: 1.5rem; /* Tamaño más grande para destacar */
     text-align: center;
     color: black; /* Color para darle un toque más dinámico */
   }
@@ -12,7 +12,7 @@
     padding-bottom: 10px;
     max-width: 800px; /* Limitar el ancho máximo */
     @media (max-width: 768px) {
-        font-size: 1.0rem;
+        font-size: 0.9rem;
     }
     line-height: 1.4;
     color: #333;
