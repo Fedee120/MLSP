@@ -10,7 +10,7 @@ export async function POST(req) { // This should be GET but nginx It's caching r
         ]);
         
         if (!sentence) {
-            return res.status(404).json({ success: false, message: 'No evaluation found' });
+            return Response.json({ success: false, message: 'No evaluation found' }, {status:404})
         }
 
         const respuesta = Response.json({
@@ -22,6 +22,6 @@ export async function POST(req) { // This should be GET but nginx It's caching r
 
     } catch (error) {
         console.error('Failed to save evaluation:', error);
-        res.status(500).json({ success: false, error: 'Failed to save evaluation' });
+        Response.json({ success: false, error: 'Failed to save evaluation' }, {status:500});
     }
 }
