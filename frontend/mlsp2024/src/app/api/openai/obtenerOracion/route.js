@@ -1,9 +1,11 @@
-import OpenAI from "openai"
 const md5 = require('md5');
+
+const Groq = require("groq-sdk");
+
 
 function getRandomPrompt(encodedDate) {
     const prompt1 = {
-        model: "gpt-3.5-turbo-0125",
+        model: "mixtral-8x7b-32768",
         response_format: { type: "json_object" },
         messages: [
             { role: "system", content: 
@@ -37,7 +39,7 @@ function getRandomPrompt(encodedDate) {
     }
 
     const prompt2 = {
-        model: "gpt-3.5-turbo-0125",
+        model: "llama2-70b-4096",
         response_format: { type: "json_object" },
         messages: [
             { role: "system", content: 
@@ -65,10 +67,10 @@ function getRandomPrompt(encodedDate) {
 }
 
 export async function POST(request){
-    const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY})
+    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
     const date = Date.now().toString();
     const encodedDate = md5(date).toString();
-    const completion = await openai.chat.completions.create(getRandomPrompt(encodedDate));
+    const completion = await groq.chat.completions.create(getRandomPrompt(encodedDate));
     const respuesta = JSON.parse(completion.choices[0].message.content)
 
     // el zaraza del sabor

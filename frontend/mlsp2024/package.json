@@ -17,6 +17,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.17",
     "axios": "^1.6.7",
     "dotenv": "^16.4.5",
+    "groq-sdk": "^0.3.2",
     "mongodb": "^6.4.0",
     "mongoose": "^8.2.1",
     "next": "14.1.2",
