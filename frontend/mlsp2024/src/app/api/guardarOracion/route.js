@@ -1,5 +1,6 @@
 import dbConnect from '../../db/mongoose';
 import Evaluation from '../../db/models/Evaluation'; // Adjust the path as necessary
+import Score from '@/app/db/models/Score';
 
 export async function POST(req) {
     await dbConnect(); // Ensures that the database connection is established
@@ -11,13 +12,12 @@ export async function POST(req) {
         return new Response({message:"Omar, algo anda mal"}, {status: 400})
     }
 
-
     // try {
     // Create a new evaluation document
-    const newEvaluation = new Evaluation({
-    oracion,
-    palabraCompleja,
-    evaluacion,
+    const newEvaluation = new Score({
+        oracion,
+        palabraCompleja,
+        evaluacion,
     });
 
     // Save the document to the database
