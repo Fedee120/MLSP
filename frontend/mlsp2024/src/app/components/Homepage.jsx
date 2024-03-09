@@ -48,6 +48,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <div className={`${styles.splashScreen} ${mostrarContenido ? styles.ocultarSplash : ''}`}>
         <h3 className={styles.title}>Evaluador de Complejidad de Texto</h3>
         <p className={styles.description}>Bienvenidos a nuestro proyecto de simplificación lexicográfica, 
         una iniciativa diseñada para hacer los textos más accesibles para quienes están aprendiendo el idioma, 
