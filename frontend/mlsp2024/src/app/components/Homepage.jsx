@@ -18,7 +18,7 @@ export default function Home() {
       const res = await axios.post('/api/obtenerOracion');
       setOracion(res.data.data.oracion);
       setPalabraCompleja(res.data.data.palabraCompleja);
-      setEvaluacion(50); // Restablecer la evaluación a 50 para la nueva oración
+      setEvaluacion(3); // Restablecer la evaluación a 50 para la nueva oración
       setMostrarContenido(true);
     } catch (error) {
       console.error('Hubo un error al obtener la oración:', error);
