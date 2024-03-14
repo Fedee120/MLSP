@@ -17,7 +17,8 @@ export async function POST(req) {
     const newEvaluation = new Score({
         oracion,
         palabraCompleja,
-        evaluacion,
+        evaluacion: 0,
+        evaluacion_normalizada: evaluacion
     });
 
     // Save the document to the database

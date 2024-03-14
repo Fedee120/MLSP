@@ -54,9 +54,9 @@ export default function Home() {
         una iniciativa diseñada para hacer los textos más accesibles para quienes están aprendiendo el idioma, 
         tienen un vocabulario limitado o enfrentan dificultades intelectuales. 
         En este proyecto, colaborarás con nosotros al evaluar oraciones generadas sinteticamente por Inteligencia Artificial. Se te dará una oración y una palabra específica.
-        Se te pedirá que evalúes la dificultad de esa palabra en el contexto de la oración en una escala de 0 a 100, 
-        donde 0 significa que la palabra no presenta complejidad en la oración y no necesita ser simplificada, 
-        y 100 indica que la palabra es extremadamente difícil y debe ser simplificada. 
+        Se te pedirá que evalúes la dificultad de esa palabra en el contexto de la oración en una escala de 1 a 5, 
+        donde 1 significa que la palabra no presenta complejidad en la oración y no necesita ser simplificada, 
+        y 5 indica que la palabra es extremadamente difícil y debe ser simplificada. 
         Aunque la oración pueda contener otras palabras complejas o ser compleja por su construcción, nos centraremos únicamente en la palabra asignada. 
           Esta plataforma está abierta para que participes todas las veces que desees, contribuyendo así a hacer los textos más comprensibles para todos.
            ¡Agradecemos tu colaboración en este esfuerzo por simplificar la comunicación!</p>
@@ -71,11 +71,11 @@ export default function Home() {
             <p className={styles.palabraCompleja}>Palabra a evaluar: <strong>{palabraCompleja}</strong></p>
             <Slider
               aria-label="Dificultad"
-              defaultValue={50}
+              defaultValue={3}
               valueLabelDisplay="auto"
               step={1}
-              min={0}
-              max={100}
+              min={1}
+              max={5}
               color='success'
               onChange={(event, newValue) => {
                 setEvaluacion(newValue); // Actualiza el estado de la evaluación con el nuevo valor

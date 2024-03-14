@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "csvToMongo": "node ./src/app/scripts/csvToMongo.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.24.0",
@@ -16,6 +17,7 @@
     "@mui/material-next": "^6.0.0-alpha.125",
     "@mui/styled-engine-sc": "^6.0.0-alpha.17",
     "axios": "^1.6.7",
+    "csv-parser": "^3.0.0",
     "dotenv": "^16.4.5",
     "mongodb": "^6.4.0",
     "mongoose": "^8.2.1",

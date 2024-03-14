@@ -15,6 +15,12 @@ const scoreSchema = new mongoose.Schema({
     min: 0,
     max: 100,
   },
+  evaluacion_normalizada: {
+    type: Number,
+    required: true,
+    min: 1,
+    max: 5,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
